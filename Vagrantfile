@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "opscode-ubuntu-12.04_chef-11.4.0"
   config.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-11.4.0.box"
-  config.vm.synced_folder "/path/to/host/folder", "/path/to/gues/folder", create:true
+  config.vm.synced_folder "www", "/var/www", create:true
 
   config.vm.network "private_network", ip: "11.11.11.11"
   config.vm.network :forwarded_port, guest: 3306, host: 8010
